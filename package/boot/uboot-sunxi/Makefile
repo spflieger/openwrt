@@ -340,6 +340,15 @@ define U-Boot/bananapi_m2_berry
   BUILD_DEVICES:=sinovoip_bananapi-m2-berry
 endef
 
+define U-Boot/orangepi_zero2
+  BUILD_SUBTARGET:=cortexa53
+  NAME:=Xunlong Orange Pi Zero2
+  BUILD_DEVICES:=xunlong_orangepi-zero2
+  DEPENDS:=+PACKAGE_u-boot-orangepi_zero2:trusted-firmware-a-sunxi-h616
+  UENV:=h616
+  ATF:=h616
+endef
+
 UBOOT_TARGETS := \
 	a64-olinuxino \
 	a64-olinuxino-emmc \
@@ -387,7 +396,8 @@ UBOOT_TARGETS := \
 	Sinovoip_BPI_M3 \
 	sopine_baseboard \
 	orangepi_zero_plus \
-	libretech_all_h3_cc_h5
+	libretech_all_h3_cc_h5 \
+	orangepi_zero2
 
 UBOOT_CONFIGURE_VARS += USE_PRIVATE_LIBGCC=yes
 
