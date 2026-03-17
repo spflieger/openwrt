@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=uwe5622-firmware
-PKG_VERSION:=2023-04-19
+PKG_VERSION:=20230419
 PKG_RELEASE:=1
 
 include $(INCLUDE_DIR)/package.mk

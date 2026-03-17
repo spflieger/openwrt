@@ -13,8 +13,8 @@ include $(INCLUDE_DIR)/package.mk
 
 define KernelPackage/uwe5622
   SUBMENU:=Wireless Drivers
-  TITLE:=Unisoc wireless driver
-  DEPENDS:=+kmod-cfg80211 +kmod-crypto-sha256\
+  TITLE:=Unisoc UWE5622 Support
+  DEPENDS:= +kmod-cfg80211 +kmod-crypto-sha256\
 	+@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT\
         +uwe5622-firmware
   FILES:= \
@@ -32,14 +32,7 @@ NOSTDINC_FLAGS := \
 	-I$(STAGING_DIR)/usr/include/mac80211 \
 	-I$(STAGING_DIR)/usr/include/mac80211/uapi \
 	-I$(PKG_BUILD_DIR)/unisocwcn/include \
-	-include backport/backport.h \
-	-Wno-error \
-	-Wno-error=address \
-	-Wno-error=stringop-overread \
-	-Wno-error=unused-variable \
-	-Wno-error=attribute-warning \
-	-Wno-error=incompatible-pointer-types \
-	-Wno-error=discarded-qualifiers
+	-include backport/backport.h
 
 NOSTDINC_FLAGS+=-DBUILD_OPENWRT
 
